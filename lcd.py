@@ -4,7 +4,7 @@ import time , commands, re
 lcd = Adafruit_CharLCD ()
 lcd.begin (16,2)
 while True:
-  zeit = time. strftime("%y.%b %H:%M:%S")
+  zeit = time.strftime("%y.%b %H:%M:%S")
   out = commands.getoutput("doveadm mailbox status all INBOX")
   m = re.search('.*unseen=(.+?) .*', out)
   print ("%s\nINBOX: %s" %(zeit , m.group(1)))
