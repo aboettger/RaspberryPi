@@ -4,7 +4,7 @@ import time , commands, re
 lcd = lcddriver.lcd()
 lcd.lcd_clear()
 while True:
-  zeit = time.strftime("%d. %b    %H:%M")
+  zeit = time.strftime("%a %d.%b %H:%M")
   out = commands.getoutput("su -c 'doveadm mailbox status all INBOX' aboettger")
   m = re.search('.*unseen=(.+?) .*', out)
   inbox = "{:<15}".format(m.group(1))
